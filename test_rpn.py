@@ -14,3 +14,9 @@ class TestBasics(unittest.TestCase):
 	def test_toomany(self):
 		with self.assertRaises(TypeError):
 			result = rpn.calculate('1 2 3 +')
+	def test_div(self):
+		result = rpn.calculate('6 4 /')
+		self.assertEqual(1.5, result)
+	def test_mul(self):
+		result = rpn.calculate('2 2 *')
+		self.assertEqual(4, result)

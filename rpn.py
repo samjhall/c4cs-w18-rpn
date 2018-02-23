@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
 
 import operator
+import logging
+import sys
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+#logger.setLevel(logging.INFO)
+sh = logging.StreamHandler(sys.stdout)
+logger.addHandler(sh)
 
 operators = {
 	'+': operator.add,
 	'-': operator.sub,
+	'/': operator.truediv,
+	'*': operator.mul,
 }
 def calculate(arg):
 	stack = list()
@@ -18,7 +28,7 @@ def calculate(arg):
 			arg1 = stack.pop()
 			result = function(arg1, arg2)
 			stack.append(result)
-		print(stack)
+		logger.debug(stack)
 
 	if len(stack) != 1:
 		raise TypeError
