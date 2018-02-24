@@ -23,4 +23,15 @@ class TestBasics(unittest.TestCase):
 	def test_percent(self):
 		result = rpn.calculate('72 5 %')
 		self.assertEqual(75.6, result)
-
+	def test_exponent(self):
+		result = rpn.calculate('2 2 ^')
+		self.assertEqual(4, result)
+	def test_intDiv(self):
+		result = rpn.calculate('5 2 .')
+		self.assertEqual(2, result)
+	def test_sum(self):
+		result = rpn.calculate('1 2 3 4 5 S')
+		self.assertEqual(15, result)
+	def test_copy(self):
+		result = rpn.calculate('1 2 3 C S')
+		self.assertEqual(9, result)
