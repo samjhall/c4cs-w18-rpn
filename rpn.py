@@ -10,12 +10,21 @@ logger.setLevel(logging.DEBUG)
 sh = logging.StreamHandler(sys.stdout)
 logger.addHandler(sh)
 
+def percent(arg1, arg2):
+        temp = arg1 / 100
+        temp = temp * arg2
+        return arg1 + temp
+
 operators = {
 	'+': operator.add,
 	'-': operator.sub,
 	'/': operator.truediv,
 	'*': operator.mul,
+	'%': percent,
+	'^': operator.pow,
+	'.': operator.ifloordiv,
 }
+
 def calculate(arg):
 	stack = list()
 	for token in arg.split():

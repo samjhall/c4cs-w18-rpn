@@ -20,3 +20,7 @@ class TestBasics(unittest.TestCase):
 	def test_mul(self):
 		result = rpn.calculate('2 2 *')
 		self.assertEqual(4, result)
+	def test_percent(self):
+		result = rpn.calculate('72 5 %')
+		self.assertEqual(75.6, result)
+
