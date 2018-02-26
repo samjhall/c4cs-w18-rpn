@@ -7,4 +7,5 @@ python:
 	- "3.6"
 	- "3.6-dev"
 	- "3.7-dev"
-script: make test
+script: 
+	- make test
