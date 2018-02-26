@@ -27,7 +27,7 @@ operators = {
 	'/': operator.truediv,
 	'*': operator.mul,
 	'%': percent,
-	'^': operator.pow,
+#	'^': operator.pow,
 	'.': operator.ifloordiv,
 }
 
