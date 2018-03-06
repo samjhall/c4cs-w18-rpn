@@ -1,0 +1,5 @@
+{
+  "test_rpn.py::TestBasics::test_copy": true, 
+  "test_rpn.py::TestBasics::test_percent": true, 
+  "test_rpn.py::TestBasics::test_sum": true
+}
