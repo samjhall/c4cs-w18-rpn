@@ -12,6 +12,22 @@ logger.addHandler(sh)
 
 def testFunc(arg1):
 	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
+	temp = arg1 * arg1
 	return temp
 
 def percent(arg1, arg2):
