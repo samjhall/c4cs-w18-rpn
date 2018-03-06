@@ -10,6 +10,10 @@ logger.setLevel(logging.DEBUG)
 sh = logging.StreamHandler(sys.stdout)
 logger.addHandler(sh)
 
+def testFunc(arg1):
+	temp = arg1 * arg1
+	return temp
+
 def percent(arg1, arg2):
         temp = arg1 / 100
         temp = temp * arg2
