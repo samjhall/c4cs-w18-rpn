@@ -32,8 +32,17 @@ def percent(arg1, arg2):
 
 def sum(arg):
 	temp = 0;
+	sys.stdout.write("\033[1;31m")
+	sys.stdout.write("Sum of: ")
+	sys.stdout.write("\033[0;0m")
 	while len(arg) != 0:
+		old_temp = temp
 		temp += arg.pop()
+		old_temp = temp - old_temp
+		sys.stdout.write(str(old_temp))
+		sys.stdout.write(" ")
+	sys.stdout.write("\033[0;0m")
+	print(" ")
 	return temp
 
 operators = {
@@ -58,11 +67,27 @@ def calculate(arg):
 				stack.clear()
 				stack.append(result)
 			elif token == 'C':
+				sys.stdout.write("\033[0;32m")
+				sys.stdout.write("Copy and push: ")
+				sys.stdout.write("\033[0;0m")
+				sys.stdout.write(str(stack[len(stack)-1]))
+				sys.stdout.write(" ")
+				print(" ")
 				stack.append(stack[len(stack)-1])
 			else :
 				function = operators[token]
 				arg2 = stack.pop()
 				arg1 = stack.pop()
+				sys.stdout.write("\033[1;34m")
+				sys.stdout.write("Operator ")
+				sys.stdout.write(token)
+				sys.stdout.write(": ")
+				sys.stdout.write("\033[0;0m")
+				sys.stdout.write(str(arg1))
+				sys.stdout.write(" ")
+				sys.stdout.write(str(arg2))
+				sys.stdout.write(" ")
+				print(" ")
 				result = function(arg1, arg2)
 				stack.append(result)
 		logger.debug(stack)
